@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<ProductCatalog.Domain.Products.LookUp>
+
+@{
+    ViewData["Title"] = "MasterList";
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            
+
+            <td>
+                <button class="btn btn-primary mr-2">@*@Html.ActionLink("Edit", "Edit", new { id = item.id })*@Edit</button>
+                <button class="btn btn-danger">@*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@Delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

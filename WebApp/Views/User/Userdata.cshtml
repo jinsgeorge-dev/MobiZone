@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ProductCatalog.Domain.Customers.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h1>User List</h1>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    #submit-btn {
+        padding-bottom: 100px;
+        padding-left: 100px;
+    }
+</style>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOnUTC)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*  <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOnUTC)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
